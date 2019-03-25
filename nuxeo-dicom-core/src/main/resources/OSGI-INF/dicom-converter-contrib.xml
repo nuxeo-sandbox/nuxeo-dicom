@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.dicom.converter">
+
+  <extension target="org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent"
+    point="command">
+    <command name="dicom2format" enabled="true">
+      <commandLine>convert</commandLine>
+      <parameterString>#{sourceFilePath} #{targetFilePath}.#{format}</parameterString>
+      <winParameterString>#{sourceFilePath} #{targetFilePath}.#{format}</winParameterString>
+      <installationDirective>You need to install ImageMagick.</installationDirective>
+    </command>
+    <command name="dicom2images" enabled="true">
+      <commandLine>convert</commandLine>
+      <parameterString>#{sourceFilePath} #{targetFilePath}.#{format}</parameterString>
+      <winParameterString>#{sourceFilePath} #{targetFilePath}.#{format}</winParameterString>
+      <installationDirective>You need to install ImageMagick.</installationDirective>
+    </command>
+  </extension>
+
+  <extension target="org.nuxeo.ecm.core.convert.service.ConversionServiceImpl" point="converter">
+    <converter name="dicom2png" class="org.nuxeo.ecm.platform.convert.plugins.CommandLineConverter">
+      <sourceMimeType>application/dicom</sourceMimeType>
+      <destinationMimeType>image/png</destinationMimeType>
+      <parameters>
+        <parameter name="CommandLineName">dicom2format</parameter>
+        <parameter name="format">png</parameter>
+      </parameters>
+    </converter>
+    <converter name="dicom2mp4" class="org.nuxeo.ecm.platform.convert.plugins.CommandLineConverter">
+      <sourceMimeType>application/dicom</sourceMimeType>
+      <destinationMimeType>video/mp4</destinationMimeType>
+      <parameters>
+        <parameter name="CommandLineName">dicom2format</parameter>
+        <parameter name="format">mp4</parameter>
+      </parameters>
+    </converter>
+  </extension>
+
+</component>
+

@@ -1,0 +1,12 @@
+<component name="org.nuxeo.ecm.dicom.lifecycle">
+
+  <require>org.nuxeo.ecm.core.CoreExtensions</require>
+  <require>org.nuxeo.ecm.platform.mail.pst.core.types</require>
+
+  <extension target="org.nuxeo.ecm.core.lifecycle.LifeCycleService" point="types">
+    <types>
+      <type name="DICOM">default</type>
+    </types>
+  </extension>
+
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.dicom.preview" version="1.0">
+
+  <extension target="org.nuxeo.ecm.platform.preview.adapter.PreviewAdapterManagerComponent"
+    point="MimeTypePreviewer">
+    <previewer class="org.nuxeo.ecm.dicom.preview.DICOMPreviewer">
+      <pattern>application/dicom</pattern>
+    </previewer>
+  </extension>
+
+</component>

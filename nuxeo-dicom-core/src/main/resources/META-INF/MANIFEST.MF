@@ -1,0 +1,14 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: org.nuxeo.ecm.dicom
+Bundle-Version: 1.0.0
+Bundle-Name: nuxeo-dicom-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.nuxeo.ecm.dicom.core;singleton=true
+Nuxeo-Component: OSGI-INF/dicom-converter-contrib.xml,
+ OSGI-INF/dicom-core-types-contrib.xml,
+ OSGI-INF/dicom-ecm-types-contrib.xml,
+ OSGI-INF/dicom-lifecycle-contrib.xml,
+ OSGI-INF/dicom-preview-contrib.xml,
+ OSGI-INF/dicom-operation-contrib.xml

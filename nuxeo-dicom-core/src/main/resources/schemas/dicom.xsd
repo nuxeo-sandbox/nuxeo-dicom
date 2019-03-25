@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="http://www.nuxeo.org/ecm/schemas/dicom/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:pst="http://www.nuxeo.org/ecm/schemas/dicom/">
+  
+  <xs:element name="modality" type="xs:string"/>
+
+</xs:schema>
