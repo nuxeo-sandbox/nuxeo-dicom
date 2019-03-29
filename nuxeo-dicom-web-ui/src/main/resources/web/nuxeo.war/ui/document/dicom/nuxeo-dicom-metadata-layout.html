@@ -86,6 +86,26 @@ limitations under the License.
       <nuxeo-date name="expired" datetime="[[document.properties.dc:expired]]"></nuxeo-date>
     </div>
 
+    <div role="widget" hidden$="[[!document.properties.dcm:modality]]">
+      <label>[[i18n('label.dicom.modality')]]</label>
+      <div name="modality">[[document.properties.dcm:modality]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.properties.dcm:frames]]">
+      <label>[[i18n('label.dicom.frames')]]</label>
+      <div name="frames">[[document.properties.dcm:frames]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.properties.dcm:time]]">
+      <label>[[i18n('label.dicom.time')]]</label>
+      <div name="time">[[document.properties.dcm:time]]</div>
+    </div>
+
+    <div role="widget" hidden$="[[!document.properties.dcm:tags.length]]">
+      <label>[[i18n('label.dicom.tags')]]</label>
+      <nuxeo-tags items="[[document.properties.dcm:tags]]"></nuxeo-tags>
+    </div>
+
     <nuxeo-document-attachments role="widget" document="[[document]]"></nuxeo-document-attachments>
   </template>
 

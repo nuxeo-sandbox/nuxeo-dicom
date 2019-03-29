@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.ecm.dicom.listeners" version="1.0">
+
+  <require>org.nuxeo.ecm.core.event.EventServiceComponent</require>
+
+  <extension target="org.nuxeo.ecm.core.event.EventServiceComponent" point="listener">
+
+    <listener name="dicomChangedListener" async="false" postCommit="false"
+      class="org.nuxeo.ecm.dicom.listeners.DICOMChangedListener" priority="20">
+      <event>documentCreated</event>
+      <event>beforeDocumentModification</event>
+    </listener>
+
+  </extension>
+
+</component>

@@ -1,4 +1,4 @@
-Bundle-ActivationPolicy: lazy
+fffBundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Manifest-Version: 1.0
 Bundle-Vendor: org.nuxeo.ecm.dicom
@@ -10,5 +10,7 @@ Nuxeo-Component: OSGI-INF/dicom-converter-contrib.xml,
  OSGI-INF/dicom-core-types-contrib.xml,
  OSGI-INF/dicom-ecm-types-contrib.xml,
  OSGI-INF/dicom-lifecycle-contrib.xml,
+ OSGI-INF/dicom-listeners-contrib.xml,
  OSGI-INF/dicom-preview-contrib.xml,
- OSGI-INF/dicom-operation-contrib.xml
+ OSGI-INF/dicom-operation-contrib.xml,
+ OSGI-INF/thumbnail-convert-service-contrib.xml

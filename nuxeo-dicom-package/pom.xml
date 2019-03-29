@@ -10,7 +10,7 @@
   <artifactId>nuxeo-dicom-package</artifactId>
   <version>10.10-SNAPSHOT</version>
   <packaging>zip</packaging>
-  <name>Nuxeo dicom package - Nuxeo dicom</name>
+  <name>Nuxeo DICOM :: Package</name>
 
   <dependencies>
     <!-- Base distribution(s) for the MP -->

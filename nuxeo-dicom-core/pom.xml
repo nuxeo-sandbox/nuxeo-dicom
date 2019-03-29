@@ -9,7 +9,7 @@
   </parent>
   <artifactId>nuxeo-dicom-core</artifactId>
   <name>Nuxeo dicom core</name>
-  <description>Nuxeo DICOM Support :: Core</description>
+  <description>Nuxeo DICOM :: Core</description>
 
   <dependencies>
     <dependency>

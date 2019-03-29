@@ -1,8 +1,18 @@
 <?xml version="1.0"?>
 <component name="org.nuxeo.ecm.dicom.converter">
 
+  <require>org.nuxeo.ecm.platform.commandline.executor.service.defaultContrib</require>
+
   <extension target="org.nuxeo.ecm.platform.commandline.executor.service.CommandLineExecutorComponent"
     point="command">
+    <command name="identifyDicomTags" enabled="true">
+      <commandLine>identify</commandLine>
+      <parameterString>-define registry:temporary-path=#{nuxeo.tmp.dir} -quiet -ping -format '%[dcm:*]' #{filePath}
+      </parameterString>
+      <winParameterString>-define registry:temporary-path=#{nuxeo.tmp.dir} -quiet -ping -format "%[dcm:*]" #{filePath}
+      </winParameterString>
+      <installationDirective>You need to install ImageMagick.</installationDirective>
+    </command>
     <command name="dicom2format" enabled="true">
       <commandLine>convert</commandLine>
       <parameterString>#{sourceFilePath} #{targetFilePath}.#{format}</parameterString>
@@ -11,8 +21,8 @@
     </command>
     <command name="dicom2images" enabled="true">
       <commandLine>convert</commandLine>
-      <parameterString>#{sourceFilePath} #{targetFilePath}.#{format}</parameterString>
-      <winParameterString>#{sourceFilePath} #{targetFilePath}.#{format}</winParameterString>
+      <parameterString>#{sourceFilePath} #{outDirPath}/image_%03d.#{format}</parameterString>
+      <winParameterString>#{sourceFilePath} #{outDirPath}/image_%03d.#{format}</winParameterString>
       <installationDirective>You need to install ImageMagick.</installationDirective>
     </command>
   </extension>
@@ -22,7 +32,7 @@
       <sourceMimeType>application/dicom</sourceMimeType>
       <destinationMimeType>image/png</destinationMimeType>
       <parameters>
-        <parameter name="CommandLineName">dicom2format</parameter>
+        <parameter name="CommandLineName">dicom2images</parameter>
         <parameter name="format">png</parameter>
       </parameters>
     </converter>

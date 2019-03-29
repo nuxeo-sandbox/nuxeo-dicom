@@ -1,7 +1,16 @@
 <?xml version="1.0"?>
-<xs:schema targetNamespace="http://www.nuxeo.org/ecm/schemas/dicom/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:pst="http://www.nuxeo.org/ecm/schemas/dicom/">
-  
-  <xs:element name="modality" type="xs:string"/>
+<xs:schema targetNamespace="http://www.nuxeo.org/ecm/schemas/dicom/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nxs="http://www.nuxeo.org/ecm/schemas/dicom/">
 
+  <xs:element name="time" type="xs:float"/>
+  <xs:element name="frames" type="xs:integer"/>
+  <xs:element name="modality" type="xs:string"/>
+  <xs:element name="tags" type="nxs:stringList"/>
+
+  <xs:complexType name="stringList">
+    <xs:sequence>
+      <xs:element name="item" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
 </xs:schema>
